@@ -26,9 +26,10 @@
     "cordova-lib": "5.3.3"
   },
   "devDependencies": {
-    "browserify": "12.0.1"
+    "browserify": "12.0.1",
+    "bundle-collapser": "1.2.1"
   },
-  "scripts":{
-    "build": "browserify --bare src/disable-bitcode.js -o dist/disable-bitcode.js"
+  "scripts": {
+    "build": "browserify --bare -p bundle-collapser/plugin src/disable-bitcode.js -o dist/disable-bitcode.js"
   }
 }
