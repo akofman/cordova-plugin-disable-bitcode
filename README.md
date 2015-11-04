@@ -17,6 +17,8 @@ for architecture arm64 clang: error: linker command failed with exit code 1
 
   Then run `cordova plugin add cordova-plugin-disable-bitcode`.
 
+  :warning: In case you are doing a fresh install with a configured config.xml file, please ensure that this plugin is well added after platforms. Also note that the order in the config.xml is important.
+
 ## License
 
 MIT © [Alexis Kofman](http://twitter.com/alexiskofman)
