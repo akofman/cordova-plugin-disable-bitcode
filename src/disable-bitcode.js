@@ -7,7 +7,7 @@
 var xcode = require('xcode');
 var fs = require('fs');
 var util = require('cordova-lib/src/cordova/util');
-var ConfigParser = require('cordova-lib/src/configparser/ConfigParser');
+var ConfigParser = require('cordova-common/src/ConfigParser/ConfigParser');
 
 var projectName = new ConfigParser(util.projectConfig(util.isCordova())).name();
 var projectPath = './platforms/ios/' + projectName + '.xcodeproj/project.pbxproj';
