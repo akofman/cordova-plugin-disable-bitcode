@@ -15,7 +15,7 @@ for architecture arm64 clang: error: linker command failed with exit code 1
 ## Installation
 First you need to add dependencies to Cordova and xcode in your project : `npm i -D cordova xcode`.
   
-Then Configure this plugin in your `config.xml` file : `<plugin name="cordova-plugin-disable-bitcode" spec="1.2.0" />`
+Then Configure this plugin in your `config.xml` file : `<plugin name="cordova-plugin-disable-bitcode" spec="1.2.1" />`
 <br/>The bitcode will be disabled after adding your platform.
 
 Or, if your platform is already installed you can simply run : `cordova plugin add cordova-plugin-disable-bitcode`.
