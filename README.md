@@ -13,7 +13,7 @@ for architecture arm64 clang: error: linker command failed with exit code 1
 > :warning: It's not a solution to disable this setting but a workaround waiting for all your plugins updates.
 
 ## Installation
-First you need to add a dependency to Cordova in your project : `npm i -D cordova`.
+First you need to add dependencies to Cordova and xcode in your project : `npm i -D cordova xcode`.
   
 Then Configure this plugin in your `config.xml` file : `<plugin name="cordova-plugin-disable-bitcode" spec="1.2.0" />`
 <br/>The bitcode will be disabled after adding your platform.
