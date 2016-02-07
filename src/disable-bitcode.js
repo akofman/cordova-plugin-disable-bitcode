@@ -4,14 +4,23 @@
 * Disable bitcode for iOS 9 projects.
 */
 
-var xcode = require('xcode');
 var fs = require('fs');
-var cordova = require('cordova');
-var projectName = new cordova.cordova_lib.configparser(cordova.findProjectRoot() + '/config.xml').name();
-var projectPath = './platforms/ios/' + projectName + '.xcodeproj/project.pbxproj';
+var xcode = require('xcode');
+var cmp = require('semver-compare');
 
-module.exports = function() {
-  var myProj = xcode.project(projectPath);
+module.exports = function(context) {
+  var projectName, projectPath, myProj, ConfigParser;
+  var projectRoot = context.opts.projectRoot;
+
+  if(cmp(context.opts.cordova.version, '5.4.0') >= 0) {
+    ConfigParser = context.requireCordovaModule('cordova-common/src/ConfigParser/ConfigParser');
+  } else {
+    ConfigParser = context.requireCordovaModule('cordova-lib/src/ConfigParser/ConfigParser');
+  }
+
+  projectName = new ConfigParser(projectRoot + '/config.xml').name();
+  projectPath = projectRoot + '/platforms/ios/' + projectName + '.xcodeproj/project.pbxproj';
+  myProj = xcode.project(projectPath);
 
   //We need to use parseSync because async causes problems when other plugins
   //are handling pbxproj file.

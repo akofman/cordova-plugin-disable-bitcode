@@ -26,11 +26,13 @@
     "cordova-ios",
     "cordova:plugin"
   ],
-  "license": "MIT",
+  "license": "Apache-2.0",
   "dependencies": {
-    "xcode": "^0.8.3"
+    "xcode": "^0.8.3",
+    "semver-compare" : "^1.0.0"
   },
   "bundledDependencies": [
-    "xcode"
+    "xcode",
+    "semver-compare"
   ]
 }
