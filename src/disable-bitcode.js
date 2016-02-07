@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 /*
-* Disable bitcode for ios9 projects.
+* Disable bitcode for iOS 9 projects.
 */
 
 var xcode = require('xcode');
@@ -13,14 +13,10 @@ var projectPath = './platforms/ios/' + projectName + '.xcodeproj/project.pbxproj
 module.exports = function() {
   var myProj = xcode.project(projectPath);
 
-  myProj.parse(function (err) {
-    if(err){
-      console.log('Error: ' + JSON.stringify(err));
-    }
-    else{
-      myProj.updateBuildProperty('ENABLE_BITCODE', 'NO');
-      fs.writeFileSync(projectPath, myProj.writeSync());
-      console.log('✔ BITCODE disable');
-    }
-  });
+  //We need to use parseSync because async causes problems when other plugins
+  //are handling pbxproj file.
+  myProj.parseSync();
+  myProj.updateBuildProperty('ENABLE_BITCODE', 'NO');
+  fs.writeFileSync(projectPath, myProj.writeSync());
+  console.log('✔ BITCODE disable');
 };
