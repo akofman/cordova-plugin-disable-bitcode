@@ -10,6 +10,6 @@
   <repo>https://github.com/akofman/cordova-plugin-disable-bitcode.git</repo>
 
   <platform name="ios">
-    <hook type="after_plugin_install" src="src/disable-bitcode.js" />
+    <hook type="after_build" src="src/disable-bitcode.js" />
   </platform>
 </plugin>
