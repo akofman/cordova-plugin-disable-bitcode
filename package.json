@@ -32,7 +32,6 @@
     "semver-compare" : "^1.0.0"
   },
   "bundledDependencies": [
-    "xcode",
-    "semver-compare"
+    "xcode"
   ]
 }
