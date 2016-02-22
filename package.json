@@ -1,6 +1,6 @@
 {
   "name": "cordova-plugin-disable-bitcode",
-  "version": "1.3.1",
+  "version": "1.3.2",
   "description": "Disable bitcode in iOS build settings",
   "homepage": "https://github.com/akofman/cordova-plugin-disable-bitcode",
   "author": {
