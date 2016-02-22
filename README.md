@@ -12,7 +12,7 @@ for architecture arm64 clang: error: linker command failed with exit code 1
 
 > :warning: It's not a solution to disable this setting but a workaround waiting for all your plugins updates.
 
-> :information_source: This plugin should also work with legacy Cordova versions, if it's not the case please do not hesitate to create an issue :)
+> :warning: This plugin should also work with legacy Cordova versions, if it's not the case please do not hesitate to create an issue :)
 
 ## Installation
 `cordova plugin add cordova-plugin-disable-bitcode --save`
